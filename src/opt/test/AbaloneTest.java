@@ -1,6 +1,5 @@
 package opt.test;
 
-import dist.*;
 import opt.*;
 import opt.example.*;
 import opt.ga.*;
@@ -20,14 +19,22 @@ import java.text.*;
  * @version 1.0
  */
 public class AbaloneTest {
-    private static Instance[] instances = initializeInstances();
 
-    private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
+    private static int NUMBER_OF_TRAINING_INSTANCES = 34110;
+    private static int NUMBER_OF_TESTING_INSTANCES = 14732;
+    private static int NUMBER_OF_ATTRIBUTES = 14;
+    private static String TRAINING_INSTANCE_FILENAME = "src/opt/test/adult_training.csv";
+    private static String TESTING_INSTANCE_FILENAME = "src/opt/test/adult_testing.csv";
+
+    private static Instance[] trainingInstances = initializeInstances(NUMBER_OF_TRAINING_INSTANCES, TRAINING_INSTANCE_FILENAME);
+    private static Instance[] testingInstances = initializeInstances(NUMBER_OF_TESTING_INSTANCES, TESTING_INSTANCE_FILENAME);
+
+    private static int inputLayer = NUMBER_OF_ATTRIBUTES, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
     private static ErrorMeasure measure = new SumOfSquaresError();
 
-    private static DataSet set = new DataSet(instances);
+    private static DataSet set = new DataSet(trainingInstances);
 
     private static BackPropagationNetwork networks[] = new BackPropagationNetwork[3];
     private static NeuralNetworkOptimizationProblem[] nnop = new NeuralNetworkOptimizationProblem[3];
@@ -61,11 +68,11 @@ public class AbaloneTest {
 
             double predicted, actual;
             start = System.nanoTime();
-            for(int j = 0; j < instances.length; j++) {
-                networks[i].setInputValues(instances[j].getData());
+            for(int j = 0; j < trainingInstances.length; j++) {
+                networks[i].setInputValues(trainingInstances[j].getData());
                 networks[i].run();
 
-                predicted = Double.parseDouble(instances[j].getLabel().toString());
+                predicted = Double.parseDouble(trainingInstances[j].getLabel().toString());
                 actual = Double.parseDouble(networks[i].getOutputValues().toString());
 
                 double trash = Math.abs(predicted - actual) < 0.5 ? correct++ : incorrect++;
@@ -91,11 +98,11 @@ public class AbaloneTest {
             oa.train();
 
             double error = 0;
-            for(int j = 0; j < instances.length; j++) {
-                network.setInputValues(instances[j].getData());
+            for(int j = 0; j < trainingInstances.length; j++) {
+                network.setInputValues(trainingInstances[j].getData());
                 network.run();
 
-                Instance output = instances[j].getLabel(), example = new Instance(network.getOutputValues());
+                Instance output = trainingInstances[j].getLabel(), example = new Instance(network.getOutputValues());
                 example.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
                 error += measure.value(output, example);
             }
@@ -104,22 +111,22 @@ public class AbaloneTest {
         }
     }
 
-    private static Instance[] initializeInstances() {
+    private static Instance[] initializeInstances(int numberOfTrainingInstances, String trainingInstanceFilename) {
 
-        double[][][] attributes = new double[4177][][];
+        double[][][] attributes = new double[numberOfTrainingInstances][][];
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File("src/opt/test/abalone.txt")));
+            BufferedReader br = new BufferedReader(new FileReader(new File(trainingInstanceFilename)));
 
             for(int i = 0; i < attributes.length; i++) {
                 Scanner scan = new Scanner(br.readLine());
                 scan.useDelimiter(",");
 
                 attributes[i] = new double[2][];
-                attributes[i][0] = new double[7]; // 7 attributes
+                attributes[i][0] = new double[NUMBER_OF_ATTRIBUTES];
                 attributes[i][1] = new double[1];
 
-                for(int j = 0; j < 7; j++)
+                for(int j = 0; j < NUMBER_OF_ATTRIBUTES; j++)
                     attributes[i][0][j] = Double.parseDouble(scan.next());
 
                 attributes[i][1][0] = Double.parseDouble(scan.next());
@@ -133,8 +140,8 @@ public class AbaloneTest {
 
         for(int i = 0; i < instances.length; i++) {
             instances[i] = new Instance(attributes[i][0]);
-            // classifications range from 0 to 30; split into 0 - 14 and 15 - 30
-            instances[i].setLabel(new Instance(attributes[i][1][0] < 15 ? 0 : 1));
+            // label needs no translation
+            instances[i].setLabel(new Instance(attributes[i][1][0]));
         }
 
         return instances;
