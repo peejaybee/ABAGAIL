@@ -20,16 +20,20 @@ import java.text.*;
  */
 public class AbaloneTest {
 
-    private static int NUMBER_OF_TRAINING_INSTANCES = 34110;
+    private static int NUMBER_OF_TRAINING_INSTANCES = 500;   //small set
+//    private static int NUMBER_OF_TRAINING_INSTANCES = 48842;   //full set
+//    private static int NUMBER_OF_TRAINING_INSTANCES = 34110;
     private static int NUMBER_OF_TESTING_INSTANCES = 14732;
-    private static int NUMBER_OF_ATTRIBUTES = 14;
-    private static String TRAINING_INSTANCE_FILENAME = "src/opt/test/adult_training.csv";
+    private static int NUMBER_OF_ATTRIBUTES = 13;
+//    private static String TRAINING_INSTANCE_FILENAME = "src/opt/test/adult_small.csv";
+    private static String TRAINING_INSTANCE_FILENAME = "src/opt/test/Adult-normalized-small.csv";
+//    private static String TRAINING_INSTANCE_FILENAME = "src/opt/test/Adult-normalized.csv";
     private static String TESTING_INSTANCE_FILENAME = "src/opt/test/adult_testing.csv";
 
     private static Instance[] trainingInstances = initializeInstances(NUMBER_OF_TRAINING_INSTANCES, TRAINING_INSTANCE_FILENAME);
-    private static Instance[] testingInstances = initializeInstances(NUMBER_OF_TESTING_INSTANCES, TESTING_INSTANCE_FILENAME);
+//    private static Instance[] testingInstances = initializeInstances(NUMBER_OF_TESTING_INSTANCES, TESTING_INSTANCE_FILENAME);
 
-    private static int inputLayer = NUMBER_OF_ATTRIBUTES, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
+    private static int inputLayer = NUMBER_OF_ATTRIBUTES, hiddenLayer = 10, outputLayer = 1, trainingIterations = 1000;
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
     private static ErrorMeasure measure = new SumOfSquaresError();
@@ -48,7 +52,7 @@ public class AbaloneTest {
     public static void main(String[] args) {
         for(int i = 0; i < oa.length; i++) {
             networks[i] = factory.createClassificationNetwork(
-                new int[] {inputLayer, hiddenLayer, outputLayer});
+                new int[] {inputLayer, hiddenLayer, outputLayer}, new func.nn.activation.LogisticSigmoid());
             nnop[i] = new NeuralNetworkOptimizationProblem(set, networks[i], measure);
         }
 
@@ -66,26 +70,22 @@ public class AbaloneTest {
             Instance optimalInstance = oa[i].getOptimal();
             networks[i].setWeights(optimalInstance.getData());
 
-            double predicted, actual;
-            start = System.nanoTime();
-            for(int j = 0; j < trainingInstances.length; j++) {
-                networks[i].setInputValues(trainingInstances[j].getData());
-                networks[i].run();
+            EvaluationResult er = evaluateNetwork(networks[i], trainingInstances);
 
-                predicted = Double.parseDouble(trainingInstances[j].getLabel().toString());
-                actual = Double.parseDouble(networks[i].getOutputValues().toString());
-
-                double trash = Math.abs(predicted - actual) < 0.5 ? correct++ : incorrect++;
-
-            }
-            end = System.nanoTime();
-            testingTime = end - start;
+            correct = er.confusionMatrix[0][0] + er.confusionMatrix[1][1];
+            incorrect = er.confusionMatrix[0][1] + er.confusionMatrix[1][0];
+            testingTime = er.testingTime;
             testingTime /= Math.pow(10,9);
 
             results +=  "\nResults for " + oaNames[i] + ": \nCorrectly classified " + correct + " instances." +
                         "\nIncorrectly classified " + incorrect + " instances.\nPercent correctly classified: "
                         + df.format(correct/(correct+incorrect)*100) + "%\nTraining time: " + df.format(trainingTime)
                         + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+
+            results += "Confusion matrix\n" +
+                    "\t0\t1\n"+
+                    "0\t" + er.confusionMatrix[0][0] + "\t" + er.confusionMatrix[0][1] + "\t <---predicted 0\n" +
+                    "1\t" + er.confusionMatrix[1][0] + "\t" + er.confusionMatrix[1][1] + "\t <---predicted 1\n";
         }
 
         System.out.println(results);
@@ -111,12 +111,12 @@ public class AbaloneTest {
         }
     }
 
-    private static Instance[] initializeInstances(int numberOfTrainingInstances, String trainingInstanceFilename) {
+    private static Instance[] initializeInstances(int numberOfInstances, String instanceFilename) {
 
-        double[][][] attributes = new double[numberOfTrainingInstances][][];
+        double[][][] attributes = new double[numberOfInstances][][];
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File(trainingInstanceFilename)));
+            BufferedReader br = new BufferedReader(new FileReader(new File(instanceFilename)));
 
             for(int i = 0; i < attributes.length; i++) {
                 Scanner scan = new Scanner(br.readLine());
@@ -146,4 +146,38 @@ public class AbaloneTest {
 
         return instances;
     }
+
+    private static EvaluationResult evaluateNetwork(BackPropagationNetwork network, Instance[] instances){
+        EvaluationResult returnValue = new EvaluationResult();
+
+        double start = System.nanoTime();
+        double predicted;
+        double actual;
+
+        for(int j = 0; j < instances.length; j++) {
+            network.setInputValues(instances[j].getData());
+            network.run();
+
+            actual = Double.parseDouble(instances[j].getLabel().toString());
+            predicted = Double.parseDouble(network.getOutputValues().toString());
+            returnValue.confusionMatrix[(int) predicted][(int) actual] += 1;
+        }
+        double end = System.nanoTime();
+        double testingTime = end - start;
+        testingTime /= Math.pow(10,9);
+
+        returnValue.testingTime = testingTime;
+
+
+
+        return returnValue;
+
+    }
+
+    private static class EvaluationResult{
+        public double[][] confusionMatrix = {{0,0},{0,0}};
+        public double testingTime = 0;
+
+    }
+
 }
