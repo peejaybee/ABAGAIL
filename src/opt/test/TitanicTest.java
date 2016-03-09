@@ -27,7 +27,7 @@ import java.util.Scanner;
  * @author Phillip Birmingham
  * @version 1.1
  */
-public class AbaloneTest {
+public class TitanicTest {
 
     private static int NUMBER_OF_TRAINING_INSTANCES = 917;
     private static int NUMBER_OF_TESTING_INSTANCES = 392;
