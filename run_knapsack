@@ -1,0 +1,48 @@
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 100
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 200
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 400
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 600
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 800
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 1000
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 2000
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 4000
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 6000
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 8000
+java -cp ABAGAIL.jar opt.test.Knapsack.RHC 10000
+
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 100 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 200 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 400 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 600 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 800 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 1000 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 2000 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 4000 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 6000 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 8000 1E11 .95
+java -cp ABAGAIL.jar opt.test.Knapsack.SA 10000 1E11 .95
+
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 100
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 200
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 400
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 500
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 800
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1000
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1100
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1200
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1400
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1500
+java -cp ABAGAIL.jar opt.test.Knapsack.GA 1800
+
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 100 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 200 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 400 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 600 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 800 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1000 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1100 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1200 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1400 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1600 200 20
+java -cp ABAGAIL.jar opt.test.Knapsack.MIMIC 1800 200 20
+

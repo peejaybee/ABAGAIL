@@ -37,6 +37,10 @@ public class FourPeaksTest {
     private static final int T = N / 5;
     
     public static void main(String[] args) {
+
+        int iterLow = Integer.parseInt(args[0]);
+        final int HIGH_ITERATION_MULTIPLIER = 200;
+
         int[] ranges = new int[N];
         Arrays.fill(ranges, 2);
         EvaluationFunction ef = new FourPeaksEvaluationFunction(T);
@@ -50,23 +54,23 @@ public class FourPeaksTest {
         ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
         
         RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
-        FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 200000);
+        FixedIterationTrainer fit = new FixedIterationTrainer(rhc, HIGH_ITERATION_MULTIPLIER * iterLow);
         fit.train();
-        System.out.println("RHC: " + ef.value(rhc.getOptimal()));
+        System.out.println("RHC " + HIGH_ITERATION_MULTIPLIER * iterLow + " iterations: " + ef.value(rhc.getOptimal()));
         
         SimulatedAnnealing sa = new SimulatedAnnealing(1E11, .95, hcp);
-        fit = new FixedIterationTrainer(sa, 200000);
+        fit = new FixedIterationTrainer(sa, HIGH_ITERATION_MULTIPLIER * iterLow);
         fit.train();
-        System.out.println("SA: " + ef.value(sa.getOptimal()));
+        System.out.println("SA " + HIGH_ITERATION_MULTIPLIER * iterLow + " iterations: " + ef.value(sa.getOptimal()));
         
         StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 100, 10, gap);
-        fit = new FixedIterationTrainer(ga, 1000);
+        fit = new FixedIterationTrainer(ga, iterLow);
         fit.train();
-        System.out.println("GA: " + ef.value(ga.getOptimal()));
+        System.out.println("GA " + iterLow + " iterations: " + ef.value(ga.getOptimal()));
         
         MIMIC mimic = new MIMIC(200, 20, pop);
-        fit = new FixedIterationTrainer(mimic, 1000);
+        fit = new FixedIterationTrainer(mimic, iterLow);
         fit.train();
-        System.out.println("MIMIC: " + ef.value(mimic.getOptimal()));
+        System.out.println("MIMIC " + iterLow + " iterations: "  + ef.value(mimic.getOptimal()));
     }
 }
