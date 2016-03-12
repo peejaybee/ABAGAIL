@@ -1,28 +1,37 @@
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 1000
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 2000
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 4000
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 6000
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 8000
-java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 10000
+#!/usr/bin/env bash
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 1000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 2000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 4000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 6000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 8000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 10000
+java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 12000
+java -cp ABAGAIL.jar opt.test.FourPeaks.RHC 14000
 
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 1000 1E11 .95
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 2000 1E11 .95
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 4000 1E11 .95
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 6000 1E11 .95
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 8000 1E11 .95
-java -cp ABAGAIL.jar opt.test.FourPeaks.SA 10000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 1000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 2000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 4000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 6000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 8000 1E11 .95
+#java -cp ABAGAIL.jar opt.test.FourPeaks.SA 10000 1E11 .95
+java -cp ABAGAIL.jar opt.test.FourPeaks.SA 12000 1E11 .95
+java -cp ABAGAIL.jar opt.test.FourPeaks.SA 14000 1E11 .95
 
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 100
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 200
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 400
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 500
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 800
-java -cp ABAGAIL.jar opt.test.FourPeaks.GA 1000
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 100
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 200
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 400
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 500
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 800
+#java -cp ABAGAIL.jar opt.test.FourPeaks.GA 1000
+java -cp ABAGAIL.jar opt.test.FourPeaks.GA 1200
+java -cp ABAGAIL.jar opt.test.FourPeaks.GA 1400
 
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 100 200 20
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 200 200 20
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 400 200 20
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 600 200 20
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 800 200 20
-java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 1000 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 100 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 200 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 400 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 600 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 800 200 20
+#java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 1000 200 20
+java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 1200 200 20
+java -cp ABAGAIL.jar opt.test.FourPeaks.MIMIC 1400 200 20
 
