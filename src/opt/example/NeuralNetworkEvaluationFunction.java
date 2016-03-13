@@ -42,6 +42,7 @@ public class NeuralNetworkEvaluationFunction implements EvaluationFunction {
     /**
      * @see opt.OptimizationProblem#value(opt.OptimizationData)
      */
+    private static int functionCount = 0;
     public double value(Instance d) {
         // set the links
         Vector weights = d.getData();
@@ -51,9 +52,11 @@ public class NeuralNetworkEvaluationFunction implements EvaluationFunction {
         for (int i = 0; i < examples.size(); i++) {
             network.setInputValues(examples.get(i).getData());
             network.run();
+            functionCount ++;
             error += measure.value(new Instance(network.getOutputValues()), examples.get(i));
         }
         // the fitness is 1 / error
+//        System.out.printf("%d calls\n", functionCount);
         return 1 / error;
     }
 

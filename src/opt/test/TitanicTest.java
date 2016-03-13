@@ -58,9 +58,26 @@ public class TitanicTest {
 
     public static void main(String[] args) {
 
-        hiddenLayer = Integer.parseInt(args[0]);
-        trainingIterations = Integer.parseInt(args[1]);
-        shortFormat = Boolean.parseBoolean(args[2]);
+        hiddenLayer = 5;
+        trainingIterations = 1000;
+        shortFormat = false;
+
+        Double temperature = 1E11;
+        Double cooling = .95;
+        int population = 200;
+        int mate = 100;
+        int mutate = 10;
+
+        if (args.length > 0) hiddenLayer = Integer.parseInt(args[0]);
+        if (args.length > 1) trainingIterations = Integer.parseInt(args[1]);
+        if (args.length > 2) shortFormat = Boolean.parseBoolean(args[2]);
+
+        if (args.length > 3) temperature = Double.parseDouble(args[3]);
+        if (args.length > 4) cooling = Double.parseDouble(args[4]);
+
+        if (args.length > 5) population = Integer.parseInt(args[5]);
+        if (args.length > 6) mate = Integer.parseInt(args[6]);
+        if (args.length > 7) mutate = Integer.parseInt(args[7]);
 
 
         for (int i = 0; i < oa.length; i++) {
@@ -70,8 +87,8 @@ public class TitanicTest {
         }
 
         oa[0] = new RandomizedHillClimbing(nnop[0]);
-        oa[1] = new SimulatedAnnealing(1E11, .95, nnop[1]);
-        oa[2] = new StandardGeneticAlgorithm(200, 100, 10, nnop[2]);
+        oa[1] = new SimulatedAnnealing(temperature, cooling, nnop[1]);
+        oa[2] = new StandardGeneticAlgorithm(population, mate, mutate, nnop[2]);
 
         double trainingKappa[] = new double[oa.length];
         double testingKappa[] = new double[oa.length];
@@ -82,7 +99,7 @@ public class TitanicTest {
 
 
         System.out.printf("Hidden nodes: %d training iterations: %d\n", hiddenLayer, trainingIterations);
-        for (int i = 0; i < oa.length; i++) {
+        for (int i = 2; i < oa.length; i++) {
 
             System.out.println("Training " + oaNames[i]);
 
@@ -143,12 +160,14 @@ public class TitanicTest {
         if (!shortFormat) {
             System.out.println(trainingResults + testingResults);
         } else {
-            System.out.println("algo, hidden, iter, Ktr, Kte, Ttr, Tte, %tr, %te");
+            System.out.println("algo, hidden, iter, Ktr, Kte, Ttr, Tte, %tr, %te, temp, cool, population, mate, mutate");
             for (int i = 0; i < oa.length; i++) {
                 String result = oaNames[i] + "," + hiddenLayer + "," + trainingIterations + "," +
                         trainingKappa[i] + "," + testingKappa[i] + "," +
                         trainingClockTime[i] + "," + testingClockTime[i] + "," +
-                        trainPercentRight[i] + "," + testPercentRight[i];
+                        trainPercentRight[i] + "," + testPercentRight[i] + "," +
+                        temperature + "," + cooling + "," + population + "," +
+                        mate + "," + mutate;
                 System.out.println(result);
             }
         }

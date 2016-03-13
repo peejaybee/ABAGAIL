@@ -1,110 +1,110 @@
 #!/usr/bin/env bash
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
-#java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 1000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 10000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 15000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 20000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 25000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 30000 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 200 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 400 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 600 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 800 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 2000 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 2000 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 2000 true
@@ -120,3 +120,37 @@ java -cp ABAGAIL.jar opt.test.TitanicTest 5 4000 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 4000 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 4000 true
 java -cp ABAGAIL.jar opt.test.TitanicTest 5 4000 true
+
+#parameter sweep
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E10 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E12 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E9 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E8 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E7 .95 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E6 .95 200 100 10
+
+
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .999 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .99 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .9 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .75 200 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .5 200 100 10
+
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 400 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 350 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 300 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 250 100 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 150 100 10
+
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 75 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 50 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 40 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 30 10
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 10 10
+
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 50
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 30
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 25
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 20
+java -cp ABAGAIL.jar opt.test.TitanicTest 5 5000 true 1E11 .95 200 100 15
