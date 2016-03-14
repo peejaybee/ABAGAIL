@@ -28,7 +28,7 @@ public class RHC {
      * The t value
      */
     private static final int T = N / 5;
-    public static final int LOOPS = 100;
+    public static final int LOOPS = 10;
 
     public static void main(String[] args) {
 

@@ -24,7 +24,7 @@ public class MIMIC {
     /**
      * Random number generator
      */
-    private static final Random random = new Random();
+    private static final Random random = new Random(1);
     /**
      * The number of items
      */
@@ -47,7 +47,7 @@ public class MIMIC {
     private static final double KNAPSACK_VOLUME =
             MAX_VOLUME * NUM_ITEMS * COPIES_EACH * .4;
 
-    public static final int LOOPS = 100;
+    public static final int LOOPS = 10;
     /**
      * The test main
      *

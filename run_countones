@@ -34,8 +34,8 @@
 #java -cp ABAGAIL.jar opt.test.CountOnes.GA 1400
 #java -cp ABAGAIL.jar opt.test.CountOnes.GA 1500
 #java -cp ABAGAIL.jar opt.test.CountOnes.GA 1800
-java -cp ABAGAIL.jar opt.test.CountOnes.GA 2000
-java -cp ABAGAIL.jar opt.test.CountOnes.GA 2200
+#java -cp ABAGAIL.jar opt.test.CountOnes.GA 2000
+#java -cp ABAGAIL.jar opt.test.CountOnes.GA 2200
 
 #java -cp ABAGAIL.jar opt.test.CountOnes.MIMIC 10 200 20
 #java -cp ABAGAIL.jar opt.test.CountOnes.MIMIC 20 200 20
