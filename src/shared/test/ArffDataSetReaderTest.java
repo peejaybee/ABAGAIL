@@ -21,7 +21,7 @@ public class ArffDataSetReaderTest {
      * @param args ignored parameters
      */
     public static void main(String[] args) throws Exception {
-        DataSetReader dsr = new ArffDataSetReader(new File("").getAbsolutePath() + "/src/shared/test/abalone.arff");
+        DataSetReader dsr = new ArffDataSetReader(new File("").getAbsolutePath() + "/src/shared/test/abalone.arff", false);
         // read in the raw data
         DataSet ds = dsr.read();
         // split out the label
