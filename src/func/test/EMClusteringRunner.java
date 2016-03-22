@@ -16,7 +16,7 @@ public class EMClusteringRunner {
      */
     public static void main(String[] args) throws Exception {
         String filename = args[0];
-        ArffDataSetReader reader = new ArffDataSetReader(filename);
+        ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet inputData = reader.read();
         EMClusterer em = new EMClusterer();
         em.estimate(inputData);

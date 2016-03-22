@@ -19,7 +19,7 @@ public class LinearDiscriminantAnalysisRunner {
      */
     public static void main(String[] args) throws Exception {
         String filename = args[0];
-        ArffDataSetReader reader = new ArffDataSetReader(filename);
+        ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet set = reader.read();
         System.out.println("Before LDA");
         System.out.println(set);

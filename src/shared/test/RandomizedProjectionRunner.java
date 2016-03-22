@@ -21,7 +21,7 @@ public class RandomizedProjectionRunner {
      */
     public static void main(String[] args) throws Exception {
         String filename = args[0];
-        ArffDataSetReader reader = new ArffDataSetReader(filename);
+        ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet set = reader.read();
         int attributeCount = set.get(0).size();
 //        IndependentComponentAnalysis filter = new IndependentComponentAnalysis(set, 1);
