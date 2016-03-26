@@ -31,12 +31,27 @@ public class ArffDataSetReader extends DataSetReader {
 	/**
 	 * Make a new data set from the given instances
 	 * @param file the name of the ARFF file to read
+	 */
+	public ArffDataSetReader(String file) {
+		super(file);
+		this.lastIsClass = false;
+	}
+
+	/**
+	 * Make a new data set from the given instances
+	 * @param file the name of the ARFF file to read
 	 * @param lastIsClass whether to treat the last attribute as the class label
 	 */
 	public ArffDataSetReader(String file, boolean lastIsClass) {
 		super(file);
 		this.lastIsClass = lastIsClass;
 	}
+
+	/**
+	 * Read the Dataset from the ARFF file
+	 * @return the Dataset created from the ARFF file
+	 * @throws Exception
+	 */
 
 	@Override
 	public DataSet read() throws Exception {
