@@ -62,12 +62,19 @@ public class EMClusterer extends AbstractConditionalDistribution implements Func
         this.tolerance = tolerance;
         this.maxIterations = maxIterations;
     }
-    
+
     /**
      * Make a new clusterer
      */
     public EMClusterer() {
         this(2, TOLERANCE, MAX_ITERATIONS);
+    }
+
+    /**
+     * Make a new clusterer
+     */
+    public EMClusterer(int k) {
+        this(k, TOLERANCE, MAX_ITERATIONS);
     }
 
     /**

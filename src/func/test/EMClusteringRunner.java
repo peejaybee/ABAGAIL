@@ -16,9 +16,10 @@ public class EMClusteringRunner {
      */
     public static void main(String[] args) throws Exception {
         String filename = args[0];
+        int k = args.length > 1 ? Integer.parseInt(args[1]) : 2 ;
         ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet inputData = reader.read();
-        EMClusterer em = new EMClusterer();
+        EMClusterer em = new EMClusterer(k);
         em.estimate(inputData);
         System.out.println(em);
     }
