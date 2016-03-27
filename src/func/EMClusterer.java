@@ -72,6 +72,7 @@ public class EMClusterer extends AbstractConditionalDistribution implements Func
 
     /**
      * Make a new clusterer
+     * @param k the number of clusters
      */
     public EMClusterer(int k) {
         this(k, TOLERANCE, MAX_ITERATIONS);
