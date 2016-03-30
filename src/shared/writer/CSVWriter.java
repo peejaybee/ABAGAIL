@@ -39,7 +39,7 @@ public class CSVWriter implements Writer {
     }
 
     /**
-     * @param toWrite
+     * @param toWrite The strings to be written to the row
      * @throws IOException
      */
     private void writeRow(List<String> toWrite) throws IOException {

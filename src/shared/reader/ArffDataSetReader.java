@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +26,8 @@ public class ArffDataSetReader extends DataSetReader {
 
 	private boolean lastIsClass = false;
 
+
+	public List<String> mAttributeNames = new ArrayList<>();
 
 	/**
 	 * Make a new data set from the given instances
@@ -94,6 +95,7 @@ public class ArffDataSetReader extends DataSetReader {
 						valMap.put(s, id++);
 					}
 					attributes.add(valMap);
+					mAttributeNames.add(parts[1]);
 				}
 			}
 			line = in.readLine();

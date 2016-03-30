@@ -78,6 +78,27 @@ public class KMeansClusterer extends AbstractConditionalDistribution implements 
     }
 
     /**
+     * Return an integer array representing the instance's cluster membership.  A zero in the nth
+     * position means that the instance was not assigned to cluster n.  A one means the instance was
+     * assigned to cluster n.
+     * @param instance The instance to be evaluated
+     * @return An integer array of length k. Each item represents membership in the
+     * corresponding cluster
+     */
+    public int[] clusterMembershipFor(Instance instance){
+        int flags[] = new int[k];
+        double nearestDistance = distanceMeasure.value(instance, clusterCenters[0]);
+        int nearestCluster = 0;
+        for (int i = 0; i < k; i++){
+            if (distanceMeasure.value(instance, clusterCenters[i]) < nearestDistance){
+                nearestCluster = i;
+                nearestDistance = distanceMeasure.value(instance, clusterCenters[i]);
+            }
+        }
+        flags[nearestCluster] = 1;
+        return flags;
+    }
+    /**
      * @see func.FunctionApproximater#estimate(shared.DataSet)
      */
     public void estimate(DataSet set) {

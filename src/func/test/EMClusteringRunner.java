@@ -5,6 +5,10 @@ import func.EMClusterer;
 import shared.DataSet;
 import shared.Instance;
 import shared.reader.ArffDataSetReader;
+import shared.writer.CSVWriter;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Testing
@@ -18,9 +22,11 @@ public class EMClusteringRunner {
      */
     public static void main(String[] args) throws Exception {
         String filename = args[0];
+        String dataName = filename.split("-")[0];
         int k = args.length > 1 ? Integer.parseInt(args[1]) : 2;
         ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet inputData = reader.read();
+        List<String> attrs = reader.mAttributeNames;
         EMClusterer em = new EMClusterer(k);
         em.estimate(inputData);
         Instance[] inputInstances = inputData.getInstances();
@@ -38,10 +44,23 @@ public class EMClusteringRunner {
             }
             outputInstances[i] = new Instance(dataOut);
             outputInstances[i].setLabel(inputInstances[i].getLabel());
-            System.out.println("Input: " + inputInstances[i]);
-            System.out.println("Output: " + outputInstances[i]);
+//            System.out.println("Input: " + inputInstances[i]);
+//            System.out.println("Output: " + outputInstances[i]);
         }
-        DataSet outputDataset = new DataSet(outputInstances);
-//        System.out.println(outputDataset);
+//        DataSet outputDataset = new DataSet(outputInstances);
+        for (int i = 0; i < k; i++) {
+            attrs.add(attrs.size() - 1, "cluster" + Integer.toString(i));
+        }
+        CSVWriter writer = new CSVWriter("../Assignment3Output/EM-" + dataName + "-k" + k + "-out.csv", attrs.toArray(new String[0]));
+        writer.open();
+        for (int i = 0; i < outputInstances.length; i++){
+            Instance instance = outputInstances[i];
+            for (int j = 0; j < instance.size(); j++){
+                writer.write(Double.toString(instance.getContinuous(j)));
+            }
+            writer.write(Double.toString(instance.getLabel().getContinuous(0)));
+            writer.nextRecord();
+        }
+        writer.close();
     }
 }
