@@ -32,6 +32,8 @@ public class DataSetWriter {
 
     private String[] labelStrings;
 
+    private String[] headers;
+
     /**
      * Make a new data set writer
      * @param set the data set to writer
@@ -41,8 +43,17 @@ public class DataSetWriter {
         this.filename = filename;
         this.append = false;
         this.labelStrings = null;
+        this.headers = null;
     }
-    
+
+    public DataSetWriter(DataSet set, String filename, String[] headers) {
+        this.set = set;
+        this.filename = filename;
+        this.append = false;
+        this.labelStrings = null;
+        this.headers = headers;
+    }
+
     /**
      * Make a new data set writer
      * @param set the data set to writer
@@ -52,6 +63,7 @@ public class DataSetWriter {
         this.filename = filename;
         this.append = append;
         this.labelStrings = null;
+        this.headers = null;
     }
 
     /**
@@ -63,6 +75,7 @@ public class DataSetWriter {
         this.filename = filename;
         this.append = append;
         this.labelStrings = labelStrings;
+        this.headers = null;
     }
 
     /**
@@ -71,6 +84,12 @@ public class DataSetWriter {
      */
     public void write() throws IOException {
         PrintWriter pw = new PrintWriter(new FileWriter(filename, this.append));
+        if (headers != null) {
+            for (int i = 0; i < headers.length; i++) {
+                pw.print(headers[i] + (i < (headers.length - 1) ? ", " : ""));
+            }
+        }
+        pw.println();
         for (int i = 0; i < set.size(); i++) {
             Instance data = set.get(i);
             boolean label = false;

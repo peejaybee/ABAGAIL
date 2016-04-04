@@ -3,9 +3,10 @@ package shared.test;
 import shared.DataSet;
 import shared.DataSetWriter;
 import shared.Instance;
-import shared.filt.PrincipalComponentAnalysis;
+import shared.filt.IndependentComponentAnalysis;
 import shared.reader.ArffDataSetReader;
 import util.linalg.Matrix;
+import util.linalg.RectangularMatrix;
 
 import java.io.File;
 
@@ -14,33 +15,24 @@ import java.io.File;
  * @author Andrew Guillory gtg008g@mail.gatech.edu
  * @version 1.0
  */
-public class PrincipalComponentAnalysisRunner {
+public class IndependentComponentAnalysisRunner {
     
     /**
      * The test main
      * @param args ignored
      */
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         String filename = args[0];
-        ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         int numberOfComponents = args.length > 1 ? Integer.parseInt(args[1]) : 2;
 
         String dataName = new File(filename).getName().split("\\.")[0];
+        ArffDataSetReader reader = new ArffDataSetReader(filename, true);
         DataSet set = reader.read();
-        System.out.println("Before PCA");
+        System.out.println("Before ICA");
         System.out.println(set);
-        PrincipalComponentAnalysis filter = new PrincipalComponentAnalysis(set, numberOfComponents);
-        System.out.println(filter.getEigenValues());
-        System.out.println(filter.getProjection().transpose());
+        IndependentComponentAnalysis filter = new IndependentComponentAnalysis(set, numberOfComponents);
         filter.filter(set);
-        System.out.println("After PCA");
-        System.out.println(set);
-        Matrix reverse = filter.getProjection().transpose();
-        for (int i = 0; i < set.size(); i++) {
-            Instance instance = set.get(i);
-            instance.setData(reverse.times(instance.getData()).plus(filter.getMean()));
-        }
-        System.out.println("After reconstructing");
+        System.out.println("After ICA");
         System.out.println(set);
         Instance firstInstance = set.get(0);
         int attrCount = firstInstance.size() + firstInstance.getLabel().size();
@@ -51,7 +43,7 @@ public class PrincipalComponentAnalysisRunner {
         for (int i = 0; i < firstInstance.getLabel().size(); i++){
             attribNames[i + firstInstance.size()] = "label" + Double.toString(firstInstance.getLabel().getContinuous());
         }
-        DataSetWriter dsw = new DataSetWriter(set, "../Assignment3Output/PCA-" + dataName + "-" + numberOfComponents + ".csv", attribNames);
+        DataSetWriter dsw = new DataSetWriter(set, "../Assignment3Output/ICA-" + dataName + "-" + numberOfComponents + ".csv", attribNames);
         dsw.write();
     }
 

@@ -28,13 +28,21 @@ public class LinearDiscriminantAnalysis implements ReversibleFilter {
      * The mean
      */
     private Vector mean;
-    
-    /**
-     * Make a new PCA filter
-     * @param toKeep the number of components to keep
-     * @param dataSet the set form which to estimate components
-     */
+
+    private boolean toKeepAutomatic = false;
+    private int toKeep = 0;
+
     public LinearDiscriminantAnalysis(DataSet dataSet) {
+        this.toKeepAutomatic = true;
+    }
+        /**
+          * Make a new LDA filter
+          * @param toKeep the number of components to keep
+          * @param dataSet the set form which to estimate components
+          */
+    public LinearDiscriminantAnalysis(DataSet dataSet, int toKeep) {
+        this.toKeepAutomatic = false;
+        this.toKeep = toKeep;
         // calculate the mean
         MultivariateGaussian mg = new MultivariateGaussian();
         mg.estimate(dataSet);
@@ -47,7 +55,9 @@ public class LinearDiscriminantAnalysis implements ReversibleFilter {
         // calculate the class counts and weight sums
         int classCount = dataSet.getDescription()
              .getLabelDescription().getDiscreteRange();
-        int toKeep = classCount - 1;
+        if (this.toKeepAutomatic) {
+            this.toKeep = classCount - 1;
+        }
         int[] classCounts = new int[classCount];
         double[] weightSums = new double[classCount];
         double weightSum = 0;
@@ -99,8 +109,8 @@ public class LinearDiscriminantAnalysis implements ReversibleFilter {
         Matrix eigenVectors = gInverseTranspose.times(sed.getU());
 
         // keep the top vectors
-        projection = new RectangularMatrix(toKeep, eigenVectors.m());
-        for (int i = 0; i < toKeep; i++) {
+        projection = new RectangularMatrix(this.toKeep, eigenVectors.m());
+        for (int i = 0; i < this.toKeep; i++) {
             Vector v = eigenVectors.getColumn(i);
             projection.setRow(i, v.times(1.0/v.norm()));
         }
